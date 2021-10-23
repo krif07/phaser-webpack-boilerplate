@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import Player from "../entities/Player";
 
 class Play extends Phaser.Scene {
 
@@ -31,11 +32,9 @@ class Play extends Phaser.Scene {
     }
 
     createPlayer(){
-        const player = this.physics.add.sprite(100, 250, 'player');
-        player.body.setGravityY(500);
-        player.setCollideWorldBounds(true);
-        return player;
+        return new Player(this, 100, 250);
     }
+
 }
 
 export default Play;
